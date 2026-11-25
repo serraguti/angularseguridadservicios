@@ -22,8 +22,14 @@ export class LoginComponent {
     let nombre = this.cajausuario.nativeElement.value
     let pass = this.cajapassword.nativeElement.value
     let user = new Login(nombre, pass)
-    await this._service.logInEmpleadoAsync(user)
-    this.mensaje = "Usuario correcto"
+    //debemos controlar un error
+    try {
+      //si funciona, recuperamos el toke
+      let token = await this._service.logInEmpleadoAsync(user)
+      this.mensaje = "Usuario correcto"
+    }catch(error){
+      this.mensaje = "Credenciales no validas"
+    }
     this._cdr.detectChanges()
   }
 }
