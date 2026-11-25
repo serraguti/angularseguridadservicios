@@ -8,9 +8,10 @@ import { FormsModule } from '@angular/forms';
 import { ServiceEmpleados } from './services/service.empleados';
 import { provideHttpClient } from '@angular/common/http';
 import { EmpleadosComponent } from './components/empleados-component/empleados-component';
+import { PerfilComponent } from './components/perfil-component/perfil-component';
 
 @NgModule({
-  declarations: [App, HomeComponent, MenuComponent, EmpleadosComponent],
+  declarations: [App, HomeComponent, MenuComponent, EmpleadosComponent, PerfilComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [provideBrowserGlobalErrorListeners(), ServiceEmpleados, provideHttpClient()],
   bootstrap: [App],

@@ -1,0 +1,19 @@
+<h3 style="color:blue">
+    Mi perfil
+</h3>
+@if (empleado){
+    <ul class="list-group">
+        <li class="list-group-item list-group-item-primary">
+            Id: {{empleado.idEmpleado}}
+        </li>        
+        <li class="list-group-item list-group-item-primary">
+            Apellido: {{empleado.apellido}}
+        </li>
+        <li class="list-group-item list-group-item-primary">
+            Oficio: {{empleado.oficio}}
+        </li>        
+        <li class="list-group-item list-group-item-primary">
+            Departamento: {{empleado.idDepartamento}}
+        </li>        
+    </ul>
+}
