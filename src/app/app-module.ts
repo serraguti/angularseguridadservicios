@@ -10,6 +10,7 @@ import { provideHttpClient } from '@angular/common/http';
 import { EmpleadosComponent } from './components/empleados-component/empleados-component';
 import { PerfilComponent } from './components/perfil-component/perfil-component';
 import { LoginComponent } from './components/login-component/login-component';
+import { provideToastService } from 'ngx-yet-another-toast-library';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,10 @@ import { LoginComponent } from './components/login-component/login-component';
     LoginComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
-  providers: [provideBrowserGlobalErrorListeners(), ServiceEmpleados, provideHttpClient()],
+  providers: [provideBrowserGlobalErrorListeners()
+    , ServiceEmpleados, provideHttpClient(),
+    provideToastService()
+  ],
   bootstrap: [App],
 })
 export class AppModule {}
