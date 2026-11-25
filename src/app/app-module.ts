@@ -4,11 +4,15 @@ import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { HomeComponent } from './components/home-component/home-component';
 import { MenuComponent } from './components/menu-component/menu-component';
+import { FormsModule } from '@angular/forms';
+import { ServiceEmpleados } from './services/service.empleados';
+import { provideHttpClient } from '@angular/common/http';
+import { EmpleadosComponent } from './components/empleados-component/empleados-component';
 
 @NgModule({
-  declarations: [App, HomeComponent, MenuComponent],
-  imports: [BrowserModule, AppRoutingModule],
-  providers: [provideBrowserGlobalErrorListeners()],
+  declarations: [App, HomeComponent, MenuComponent, EmpleadosComponent],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  providers: [provideBrowserGlobalErrorListeners(), ServiceEmpleados, provideHttpClient()],
   bootstrap: [App],
 })
 export class AppModule {}
