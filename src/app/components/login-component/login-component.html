@@ -1,0 +1,13 @@
+<h3>Log In empleado</h3>
+<form #form="ngForm">
+    User name
+    <input type="text" name="cajausuario" #cajausuario
+    class="form-control"/>
+    Password
+    <input type="text" name="cajapassword" #cajapassword
+    class="form-control"/>
+    <button class="btn btn-info" (click)="validarUsuario()">
+        Log In
+    </button>
+</form>
+<h2 style="color:red">{{mensaje}}</h2>
