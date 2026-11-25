@@ -27,6 +27,8 @@ export class LoginComponent {
       //si funciona, recuperamos el toke
       let token = await this._service.logInEmpleadoAsync(user)
       this.mensaje = "Usuario correcto"
+      //almacenamos el token en localStorage
+      localStorage.setItem("TOKEN", token)
     }catch(error){
       this.mensaje = "Credenciales no validas"
     }

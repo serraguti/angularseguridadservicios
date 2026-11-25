@@ -22,8 +22,12 @@ export class ServiceEmpleados {
     async getPerfilAsync(): Promise<Empleado> {
         let request = "api/empleadosauth/perfilauth"
         let url = environment.apiejemplos + request
+        //debemos recuperar el token
+        let token = localStorage.getItem("TOKEN")
+        //creamos la cabecera de validacion
+        let header = new HttpHeaders().set("Authorization","bearer " + token)
         return firstValueFrom(
-            this._http.get<Empleado>(url)
+            this._http.get<Empleado>(url, {headers: header})
         )
     }
     
