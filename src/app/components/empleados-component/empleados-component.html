@@ -1,1 +1,20 @@
-<p>empleados-component works!</p>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Apellido</th>
+            <th>Oficio</th>
+            <th>Departamento</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (emp of arrayempleados; track emp){
+            <tr>
+                <td>{{emp.idEmpleado}}</td>
+                <td>{{emp.apellido}}</td>
+                <td>{{emp.oficio}}</td>
+                <td>{{emp.idDepartamento}}</td>
+            </tr>
+        }
+    </tbody>
+</table>
